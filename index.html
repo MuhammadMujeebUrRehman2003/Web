@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Muhammad Mujeeb Ur Rehman — SQA Engineer specializing in Test Automation, Manual Testing & API Testing." />
+  <title>Muhammad Mujeeb | SQA Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    
+
+    /* ===== LOADER ===== */
+    #loader {
+      position: fixed; inset: 0;
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 9999; transition: opacity 0.6s ease;
+    }
+    
+    #loader.gone { opacity: 0; pointer-events: none; }
+    .ld-inner { text-align: center; }
+    .ld-logo {
+      font-size: 2.2rem; font-weight: 900; letter-spacing: -1px;
+      margin-bottom: 20px;
+      background: var(--grad); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .ld-bar { width: 200px; height: 3px; background: var(--border); border-radius: 3px; overflow: hidden; margin: 0 auto 14px; }
+    .ld-fill { height: 100%; background: var(--grad); width: 0; animation: ld 1.6s ease forwards; }
+    @keyframes ld { to { width: 100%; } }
+    .ld-text { font-size: 0.78rem; color: var(--text3); letter-spacing: 2px; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
+
+
+
+        /* ===== VOICE GREETING ===== */
+    #voice-toast { position: fixed; bottom: 80px; right: 28px; background: var(--card); border: 1px solid var(--border-h); border-radius: var(--r); padding: 14px 20px; display: flex; align-items: center; gap: 12px; z-index: 901; opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; backdrop-filter: blur(16px); max-width: 280px; }
+    #voice-toast.show { opacity: 1; transform: none; }
+    .vt-wave { display: flex; align-items: flex-end; gap: 3px; height: 24px; }
+    .vt-bar { width: 4px; border-radius: 4px; background: var(--grad); animation: wave 1.2s ease-in-out infinite; }
+    .vt-bar:nth-child(1) { height: 8px; animation-delay: 0s; }
+    .vt-bar:nth-child(2) { height: 18px; animation-delay: 0.15s; }
+    .vt-bar:nth-child(3) { height: 12px; animation-delay: 0.3s; }
+    .vt-bar:nth-child(4) { height: 22px; animation-delay: 0.1s; }
+    .vt-bar:nth-child(5) { height: 10px; animation-delay: 0.25s; }
+    @keyframes wave { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.4); } }
+    .vt-text { font-size: 0.82rem; color: var(--text2); font-family: 'JetBrains Mono', monospace; }
+    .vt-text strong { color: var(--accent); display: block; font-size: 0.88rem; }
+
+    /* ===== HERO ===== */
+    #home {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding-top: var(--nav-h);
+    }
+    .hero-orbs { position: absolute; inset: 0; pointer-events: none; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(120px); }
+    .orb1 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,212,255,0.1), transparent 70%); top: -100px; right: -100px; }
+    .orb2 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(124,58,237,0.09), transparent 70%); bottom: -80px; left: -80px; }
+    .orb3 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(16,185,129,0.06), transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding: 80px 0; position: relative; z-index: 1; width: 100%; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; font-weight: 600; color: var(--accent3);
+      border: 1px solid rgba(16,185,129,0.35); border-radius: 8px;
+      padding: 6px 16px; margin-bottom: 24px; letter-spacing: 0.5px;
+    }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent3); animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(16,185,129,0.4);}50%{opacity:0.7;box-shadow:0 0 0 8px rgba(16,185,129,0);} }
+    .hero-title { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+    .hero-typing { font-size: 1.1rem; color: var(--text2); margin-bottom: 22px; font-family: 'JetBrains Mono', monospace; }
+    .type-prefix { color: var(--text3); }
+    .type-text { color: var(--accent); font-weight: 600; }
+    .type-cursor { color: var(--accent); animation: blink 1s ease infinite; }
+    @keyframes blink { 0%,100%{opacity:1;}50%{opacity:0;} }
+    .hero-desc { color: var(--text2); font-size: 1rem; line-height: 1.75; margin-bottom: 32px; max-width: 500px; }
+    .hero-stats { display: flex; gap: 28px; margin-bottom: 36px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-n { display: block; font-size: 1.8rem; font-weight: 800; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+    .stat-l { font-size: 0.72rem; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; font-weight: 600; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* Profile Visual */
+    .hero-visual { display: flex; justify-content: center; align-items: center; }
+    .profile-ring { position: relative; width: 340px; height: 340px; }
+    .pr-circle {
+      position: absolute; inset: 0; border-radius: 50%;
+      border: 2px solid transparent;
+      background: var(--grad) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out; mask-composite: exclude;
+      animation: spin 12s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .pr-img {
+      position: absolute; inset: 20px; border-radius: 50%;
+      background: var(--bg3); border: 2px solid var(--border);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 10px; color: var(--text3); font-size: 3.5rem; overflow: hidden;
+    }
+    .pr-img-label { font-size: 0.75rem; color: var(--text3); letter-spacing: 1px; font-weight: 500; }
+    .pr-badge {
+      position: absolute; background: var(--bg2); border: 1px solid var(--border-h);
+      border-radius: 8px; padding: 8px 14px; font-size: 0.75rem; font-weight: 600;
+      color: var(--accent); display: flex; align-items: center; gap: 6px;
+      backdrop-filter: blur(10px);
+    }
+    .pr-badge.b1 { top: 20px; left: -10px; }
+    .pr-badge.b2 { top: 50%; right: -20px; transform: translateY(-50%); }
+    .pr-badge.b3 { bottom: 20px; left: 0px; }
+    .pr-badge i { color: var(--accent2); }
+
+    /* Available bar */
+    .available-bar { padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg2); }
+    .av-inner { display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+    .av-item { display: flex; align-items: center; gap: 8px; color: var(--text3); font-size: 0.85rem; font-weight: 600; }
+    .av-item i { color: var(--accent); }
+    .av-div { width: 1px; height: 24px; background: var(--border); }
+
+    /* CTA Section */
+    .cta-sec { padding: 100px 0; background: var(--bg2); }
+    .cta-box {
+      text-align: center; padding: 64px;
+      border-radius: calc(var(--r) * 2);
+      background: var(--card); border: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .cta-box::before { content:''; position:absolute; top:-100px; right:-100px; width:400px; height:400px; background:radial-gradient(circle,rgba(0,212,255,0.07),transparent 70%); }
+    .cta-box::after { content:''; position:absolute; bottom:-80px; left:-80px; width:300px; height:300px; background:radial-gradient(circle,rgba(124,58,237,0.06),transparent 70%); }
+    .cta-box h2 { font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 800; margin-bottom: 16px; }
+    .cta-box > p { color: var(--text2); margin-bottom: 36px; max-width: 550px; margin-left: auto; margin-right: auto; font-size: 1rem; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+    .cta-tags { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .ct { font-size: 0.78rem; color: var(--text3); display: flex; align-items: center; gap: 6px; font-weight: 600; }
+    .ct i { color: var(--accent3); }
+
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-visual { display: none; }
+      .hero-stats { justify-content: center; }
+      .hero-btns { justify-content: center; }
+    }
+    @media (max-width: 768px) {
+      .cta-box { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Three.js background canvas -->
+  <canvas data-three="hero" class="three-bg"></canvas>
+
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-inner">
+    <div class="ld-logo">MR<span style="color:var(--accent)">.</span></div>
+    <div class="ld-bar"><div class="ld-fill"></div></div>
+    <p class="ld-text">Initializing QA Suite...</p>
+  </div>
+</div>
+
+<button id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+
+<!-- ===== VOICE TOAST ===== -->
+<div id="voice-toast">
+  <div class="vt-wave">
+    <div class="vt-bar"></div><div class="vt-bar"></div><div class="vt-bar"></div>
+    <div class="vt-bar"></div><div class="vt-bar"></div>
+  </div>
+  <div class="vt-text">
+    <strong>Welcome!</strong>Mujeeb's Portfolio
+  </div>
+</div>
+
+
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-wrap">
+    <a href="index.html" class="nav-brand">MR<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nl">Home</a></li>
+      <li><a href="about.html" class="nl">About</a></li>
+      <li><a href="skills.html" class="nl">Skills</a></li>
+      <li><a href="experience.html" class="nl">Experience</a></li>
+      <li><a href="projects.html" class="nl">Projects</a></li>
+      <li><a href="certifications.html" class="nl">Certifications</a></li>
+      <li><a href="contact.html" class="nl">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="contact.html" class="btn-hire">Hire Me</a>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Backdrop -->
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <button class="drawer-close" id="drawerClose"><i class="fas fa-times"></i></button>
+  <ul class="drawer-nav">
+    <!-- duplicate your nav links here -->
+    <li><a href="index.html" class="nl">Home</a></li>
+    <li><a href="about.html" class="nl">About</a></li>
+    <li><a href="skills.html" class="nl">Skills</a></li>
+    <li><a href="experience.html" class="nl">Experience</a></li>
+    <li><a href="projects.html" class="nl">Projects</a></li>
+    <li><a href="certifications.html" class="nl">Certifications</a></li>
+    <li><a href="contact.html" class="nl">Contact</a></li>
+  </ul>
+  <div class="drawer-divider"></div>
+  <div class="drawer-hire"><a href="contact.html">Hire Me</a></div>
+  <div class="drawer-socials">
+    <a href="https://www.linkedin.com/in/muhammad-mujeeb-ur-rehman/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://github.com/MuhammadMujeebUrRehman2003" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="mailto:muj00002.rehman@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+</div>
+<!-- HERO -->
+<section id="home">
+  <div class="hero-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+  <div class="hero-grid"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><span class="badge-dot"></span> Available for Work</div>
+        <h1 class="hero-title">Hi, I'm <span class="grad-text">Mujeeb</span><br/>Ur Rehman</h1>
+        <div class="hero-typing">
+          <span class="type-prefix">I am a </span><span id="typeText" class="type-text"></span><span class="type-cursor">|</span>
+        </div>
+        <p class="hero-desc">Results-driven SQA Engineer with hands-on experience in manual testing, test automation & API testing. Delivered <strong>zero critical defects</strong> to production across 5 Agile sprint releases.</p>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-n" data-target="5">0</span><span class="stat-l">Sprint Releases</span></div>
+          <div class="stat"><span class="stat-n" data-target="50">0</span><span class="stat-l">Test Cases/Project</span></div>
+          <div class="stat"><span class="stat-n" data-target="100">0</span><span class="stat-l">% Defect Closure</span></div>
+          <div class="stat"><span class="stat-n" data-target="20">0</span><span class="stat-l">APIs Tested</span></div>
+        </div>
+        <div class="hero-btns">
+          <a href="assets/resume/Muhammad_Mujeeb_SQA_CV.pdf" target="_blank" download class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
+          <a href="projects.html" class="btn btn-outline"><i class="fas fa-folder-open"></i> View Projects</a>
+          <a href="contact.html" class="btn btn-ghost"><i class="fas fa-envelope"></i> Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="profile-ring">
+          <div class="pr-circle"></div>
+          <div class="pr-img">
+            <i class="fas fa-user"></i>
+            <span class="pr-img-label">Your Photo Here</span>
+          </div>
+          <div class="pr-badge b1"><i class="fas fa-bug"></i> Bug Hunter</div>
+          <div class="pr-badge b2"><i class="fas fa-robot"></i> Automation</div>
+          <div class="pr-badge b3"><i class="fas fa-vial"></i> API Tester</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVAILABLE BAR -->
+<div class="available-bar">
+  <div class="container">
+    <div class="av-inner">
+      <div class="av-item"><i class="fas fa-shield-halved"></i> Zero Critical Defects</div>
+      <div class="av-div"></div>
+      <div class="av-item"><i class="fas fa-robot"></i> Selenium · Playwright · Cypress</div>
+      <div class="av-div"></div>
+      <div class="av-item"><i class="fas fa-paper-plane"></i> Postman REST API</div>
+      <div class="av-div"></div>
+      <div class="av-item"><i class="fas fa-code-branch"></i> CI/CD · GitHub Actions</div>
+      <div class="av-div"></div>
+      <div class="av-item"><i class="fas fa-sitemap"></i> Agile · Scrum · Jira</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-sec">
+  <div class="container">
+    <div class="cta-box">
+      <span class="eyebrow">Open for Opportunities</span>
+      <h2 class="sec-title">Let's Build <span class="grad-text">Quality Together</span></h2>
+      <p>Stop releasing untested code. Let's build a QA strategy that catches bugs before your users do — and ships software you can be proud of.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-primary"><i class="fas fa-envelope"></i> Hire Me Now</a>
+        <a href="assets/resume/Muhammad_Mujeeb_SQA_CV.pdf" target="_blank" download class="btn btn-outline"><i class="fas fa-download"></i> Download CV</a>
+      </div>
+      <div class="cta-tags">
+        <span class="ct"><i class="fas fa-check-circle"></i> Fast Response</span>
+        <span class="ct"><i class="fas fa-check-circle"></i> Zero Critical Defects</span>
+        <span class="ct"><i class="fas fa-check-circle"></i> Remote-Friendly</span>
+        <span class="ct"><i class="fas fa-check-circle"></i> Agile-Ready</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="fb-brand">MR<span>.</span></div>
+        <p>SQA Engineer passionate about delivering quality software through automation, manual testing & API validation. Zero defects. Every sprint.</p>
+        <div class="f-socials">
+          <a href="https://www.linkedin.com/in/muhammad-mujeeb-ur-rehman/" target="_blank" class="fs"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/MuhammadMujeebUrRehman2003" target="_blank" class="fs"><i class="fab fa-github"></i></a>
+          <a href="mailto:muj00002.rehman@gmail.com" class="fs"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="experience.html">Experience</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>More</h5>
+        <ul>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="assets/resume/Muhammad_Mujeeb_SQA_CV.pdf" target="_blank" download>Download CV</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <p><i class="fas fa-envelope"></i> muj00002.rehman@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +92 319 1699877</p>
+        <p><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</p>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2026 Muhammad Mujeeb Ur Rehman. All rights reserved.</p>
+      <p>Designed & Built by <strong>Muhammad Mujeeb Ur Rehman</strong></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Loader
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('gone');
+
+    // Show toast visually always
+    document.getElementById('voice-toast').classList.add('show');
+
+    // Try speech (may be blocked by browser autoplay policy)
+    if ('speechSynthesis' in window) {
+      const u = new SpeechSynthesisUtterance("Welcome to Mujeeb's Portfolio.");
+      u.rate = 0.9; u.pitch = 1; u.volume = 1;
+      window.speechSynthesis.speak(u);
+      u.onend = () => setTimeout(() => document.getElementById('voice-toast').classList.remove('show'), 800);
+      // Fallback: hide toast after 4s even if speech is blocked
+      setTimeout(() => document.getElementById('voice-toast').classList.remove('show'), 4000);
+    }
+  }, 1600);
+});
+
+
+// ===== VOICE GREETING =====
+function greet() {
+  if ('speechSynthesis' in window) {
+    const u = new SpeechSynthesisUtterance("Welcome to Mujeeb's Portfolio.");
+    u.rate = 0.9;
+    u.pitch = 1;
+    u.volume = 1;
+    const toast = document.getElementById('voice-toast');
+    toast.classList.add('show');
+    window.speechSynthesis.speak(u);
+    u.onend = () => {
+      setTimeout(() => toast.classList.remove('show'), 800);
+    };
+  }
+}
+
+// Scroll top
+const scrollTop = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+  scrollTop.classList.toggle('show', window.scrollY > 400);
+});
+scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+const menuBtn = document.getElementById('menuBtn');
+const drawer = document.getElementById('navDrawer');
+const backdrop = document.getElementById('navBackdrop');
+const closeBtn = document.getElementById('drawerClose');
+
+function openDrawer() {
+  drawer.classList.add('open');
+  backdrop.classList.add('open');
+  menuBtn.classList.add('open');
+  menuBtn.querySelector('i').className = 'fas fa-times';
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  drawer.classList.remove('open');
+  backdrop.classList.remove('open');
+  menuBtn.classList.remove('open');
+  menuBtn.querySelector('i').className = 'fas fa-bars';
+  document.body.style.overflow = '';
+}
+menuBtn.addEventListener('click', () => {
+  drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+});
+backdrop.addEventListener('click', closeDrawer);
+closeBtn.addEventListener('click', closeDrawer);
+// close drawer when a link is clicked
+document.querySelectorAll('.drawer-nav .nl').forEach(link => {
+  link.addEventListener('click', closeDrawer);
+});
+// close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+});
+
+    // ── Auto-set active nav link based on current page ──
+    (function () {
+      const page = location.pathname.split("/").pop() || "index.html";
+      document.querySelectorAll(".nl").forEach(link => {
+        link.classList.remove("act");
+        const href = link.getAttribute("href");
+        if (href === page || (page === "" && href === "index.html")) {
+          link.classList.add("act");
+        }
+      });
+    })();
+// AOS
+
+// Counters
+const cntObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(!e.isIntersecting) return;
+    const el = e.target, target = +el.dataset.target;
+    let cur = 0; const step = target / 60;
+    const t = setInterval(() => { cur = Math.min(cur+step,target); el.textContent = Math.round(cur); if(cur>=target) clearInterval(t); }, 20);
+    cntObs.unobserve(el);
+  });
+}, { threshold:0.5 });
+document.querySelectorAll('.stat-n[data-target]').forEach(el => cntObs.observe(el));
+// Typing
+const words = ['SQA Engineer','Test Automation Expert','API Tester','Bug Hunter','Quality Advocate'];
+let wi=0, ci=0, del=false;
+const typeEl = document.getElementById('typeText');
+function type(){
+  const w=words[wi];
+  if(!del){ typeEl.textContent=w.substring(0,ci+1); ci++; if(ci===w.length){del=true;setTimeout(type,1800);return;} }
+  else { typeEl.textContent=w.substring(0,ci-1); ci--; if(ci===0){del=false;wi=(wi+1)%words.length;} }
+  setTimeout(type,del?60:90);
+}
+setTimeout(type,1000);
+
+</script>
+  <!-- THREE.JS (must load before GSAP so GSAP doesn't hide canvas) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/js/threejs-bg.js"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/scrolltrigger-init.js"></script>
+</body>
+</html>

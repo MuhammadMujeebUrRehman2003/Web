@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Muhammad Mujeeb | SQA Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    
+
+    /* skills layout in style.css */
+  </style>
+</head>
+<body>
+
+  <!-- ══ FIX 3: THE CANVAS — this was missing entirely ══ -->
+  <canvas data-three="skills" class="three-bg"></canvas>
+
+<button id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+<nav id="nav">
+  <div class="nav-wrap">
+    <a href="index.html" class="nav-brand">MR<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nl">Home</a></li>
+      <li><a href="about.html" class="nl">About</a></li>
+      <li><a href="skills.html" class="nl">Skills</a></li>
+      <li><a href="experience.html" class="nl">Experience</a></li>
+      <li><a href="projects.html" class="nl">Projects</a></li>
+      <li><a href="certifications.html" class="nl">Certifications</a></li>
+      <li><a href="contact.html" class="nl">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="contact.html" class="btn-hire">Hire Me</a>
+      <button id="menuBtn" class="menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Backdrop -->
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <button class="drawer-close" id="drawerClose"><i class="fas fa-times"></i></button>
+  <ul class="drawer-nav">
+    <!-- duplicate your nav links here -->
+    <li><a href="index.html" class="nl">Home</a></li>
+    <li><a href="about.html" class="nl">About</a></li>
+    <li><a href="skills.html" class="nl">Skills</a></li>
+    <li><a href="experience.html" class="nl">Experience</a></li>
+    <li><a href="projects.html" class="nl">Projects</a></li>
+    <li><a href="certifications.html" class="nl">Certifications</a></li>
+    <li><a href="contact.html" class="nl">Contact</a></li>
+  </ul>
+  <div class="drawer-divider"></div>
+  <div class="drawer-hire"><a href="contact.html">Hire Me</a></div>
+  <div class="drawer-socials">
+    <a href="https://www.linkedin.com/in/muhammad-mujeeb-ur-rehman/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://github.com/MuhammadMujeebUrRehman2003" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="mailto:muj00002.rehman@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-orbs"><div class="page-orb page-orb1"></div><div class="page-orb page-orb2"></div></div>
+  <div class="grid-bg"></div>
+  <div class="container page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep"><i class="fas fa-chevron-right"></i></span><span>Skills</span></div>
+    <h1 class="page-hero-title">Technical <span class="grad-text">Skills</span></h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-header">
+      <span class="eyebrow">Technical Arsenal</span>
+      <h2 class="sec-title">Skills That <span class="grad-text">Ship Quality</span></h2>
+      <p class="sec-sub">From automation frameworks to API testing — a comprehensive toolkit built for modern QA engineering.</p>
+    </div>
+
+    <div class="skills-tabs">
+      <button class="tab act" data-tab="automation">Automation</button>
+      <button class="tab" data-tab="manual">Manual Testing</button>
+      <button class="tab" data-tab="api">API Testing</button>
+      <button class="tab" data-tab="cicd">CI/CD & Tools</button>
+      <button class="tab" data-tab="languages">Languages</button>
+    </div>
+
+    <div class="skill-panels">
+      <div class="panel act" id="tab-automation">
+        <div class="skill-grid">
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-robot"></i></div><h4>Selenium WebDriver</h4><p>C# · POM · NUnit · Data-Driven</p><div class="sk-bar"><div class="sk-fill" data-pct="90"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-theater-masks"></i></div><h4>Playwright</h4><p>JavaScript · TypeScript</p><div class="sk-bar"><div class="sk-fill" data-pct="70"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-leaf"></i></div><h4>Cypress</h4><p>JavaScript · E2E Testing</p><div class="sk-bar"><div class="sk-fill" data-pct="65"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-mobile-alt"></i></div><h4>Appium</h4><p>Java · Mobile Testing</p><div class="sk-bar"><div class="sk-fill" data-pct="55"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-layer-group"></i></div><h4>Page Object Model</h4><p>Framework Architecture</p><div class="sk-bar"><div class="sk-fill" data-pct="92"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-chart-bar"></i></div><h4>Extent Reports</h4><p>HTML Test Reporting</p><div class="sk-bar"><div class="sk-fill" data-pct="88"></div></div></div>
+        </div>
+      </div>
+      <div class="panel" id="tab-manual">
+        <div class="skill-grid">
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-clipboard-list"></i></div><h4>Test Case Design</h4><p>BVA · Equivalence Partitioning</p><div class="sk-bar"><div class="sk-fill" data-pct="95"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-sync-alt"></i></div><h4>Regression Testing</h4><p>Structured Regression Cycles</p><div class="sk-bar"><div class="sk-fill" data-pct="93"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-compass"></i></div><h4>Exploratory Testing</h4><p>Risk-Based Exploration</p><div class="sk-bar"><div class="sk-fill" data-pct="88"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-globe"></i></div><h4>Cross-Browser Testing</h4><p>Chrome · Firefox · Edge</p><div class="sk-bar"><div class="sk-fill" data-pct="90"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-users"></i></div><h4>UAT</h4><p>User Acceptance Testing</p><div class="sk-bar"><div class="sk-fill" data-pct="85"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-fire"></i></div><h4>Smoke & Sanity</h4><p>Pre-release Validation</p><div class="sk-bar"><div class="sk-fill" data-pct="95"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-table"></i></div><h4>RTM & Test Plans</h4><p>Traceability Matrix · AIO Tests</p><div class="sk-bar"><div class="sk-fill" data-pct="92"></div></div></div>
+        </div>
+      </div>
+      <div class="panel" id="tab-api">
+        <div class="skill-grid">
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-paper-plane"></i></div><h4>Postman</h4><p>Collections · Environments · Monitors</p><div class="sk-bar"><div class="sk-fill" data-pct="90"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-exchange-alt"></i></div><h4>REST API Testing</h4><p>GET · POST · PUT · DELETE · PATCH</p><div class="sk-bar"><div class="sk-fill" data-pct="88"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-check-double"></i></div><h4>Response Validation</h4><p>Status Codes · JSON Schema · Body</p><div class="sk-bar"><div class="sk-fill" data-pct="87"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-code"></i></div><h4>JSON Validation</h4><p>Schema · Data Integrity</p><div class="sk-bar"><div class="sk-fill" data-pct="85"></div></div></div>
+        </div>
+      </div>
+      <div class="panel" id="tab-cicd">
+        <div class="skill-grid">
+          <div class="sk-card glass"><div class="sk-icon"><i class="fab fa-github"></i></div><h4>GitHub Actions</h4><p>CI Pipelines · Automated Runs</p><div class="sk-bar"><div class="sk-fill" data-pct="85"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-tools"></i></div><h4>Jenkins</h4><p>Fundamentals · Job Config</p><div class="sk-bar"><div class="sk-fill" data-pct="65"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fab fa-git-alt"></i></div><h4>Git & GitHub</h4><p>Version Control · PR Workflow</p><div class="sk-bar"><div class="sk-fill" data-pct="88"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fab fa-jira"></i></div><h4>Jira</h4><p>Bug Tracking · Sprint Management</p><div class="sk-bar"><div class="sk-fill" data-pct="90"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-sitemap"></i></div><h4>Agile / Scrum</h4><p>Daily Standups · Sprint Cycles</p><div class="sk-bar"><div class="sk-fill" data-pct="88"></div></div></div>
+        </div>
+      </div>
+      <div class="panel" id="tab-languages">
+        <div class="skill-grid">
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-hashtag"></i></div><h4>C#</h4><p>Selenium · NUnit · OOP</p><div class="sk-bar"><div class="sk-fill" data-pct="85"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fab fa-java"></i></div><h4>Java</h4><p>TestNG · Appium · OOP</p><div class="sk-bar"><div class="sk-fill" data-pct="75"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fab fa-js"></i></div><h4>JavaScript</h4><p>Playwright · Cypress · ES6+</p><div class="sk-bar"><div class="sk-fill" data-pct="78"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-code"></i></div><h4>TypeScript</h4><p>Playwright · Type Safety</p><div class="sk-bar"><div class="sk-fill" data-pct="72"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fab fa-python"></i></div><h4>Python</h4><p>Scripting · Backend (Odoo)</p><div class="sk-bar"><div class="sk-fill" data-pct="70"></div></div></div>
+          <div class="sk-card glass"><div class="sk-icon"><i class="fas fa-database"></i></div><h4>SQL / MySQL</h4><p>Query Writing · DB Validation</p><div class="sk-bar"><div class="sk-fill" data-pct="75"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="fb-brand">MR<span>.</span></div>
+        <p>SQA Engineer passionate about delivering quality software through automation, manual testing & API validation. Zero defects. Every sprint.</p>
+        <div class="f-socials">
+          <a href="https://www.linkedin.com/in/muhammad-mujeeb-ur-rehman/" target="_blank" class="fs"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/MuhammadMujeebUrRehman2003" target="_blank" class="fs"><i class="fab fa-github"></i></a>
+          <a href="mailto:muj00002.rehman@gmail.com" class="fs"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="experience.html">Experience</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>More</h5>
+        <ul>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="assets/resume/Muhammad_Mujeeb_SQA_CV.pdf" target="_blank" download>Download CV</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <p><i class="fas fa-envelope"></i> muj00002.rehman@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +92 319 1699877</p>
+        <p><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</p>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2026 Muhammad Mujeeb Ur Rehman. All rights reserved.</p>
+      <p>Designed & Built by <strong>Muhammad Mujeeb Ur Rehman</strong></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ FIX 4: Page scripts BEFORE Three.js & GSAP ══ -->
+<script>
+const scrollTop = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+  scrollTop.classList.toggle('show', window.scrollY > 400);
+});
+scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+const menuBtn = document.getElementById('menuBtn');
+const drawer = document.getElementById('navDrawer');
+const backdrop = document.getElementById('navBackdrop');
+const closeBtn = document.getElementById('drawerClose');
+
+function openDrawer() {
+  drawer.classList.add('open');
+  backdrop.classList.add('open');
+  menuBtn.classList.add('open');
+  menuBtn.querySelector('i').className = 'fas fa-times';
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  drawer.classList.remove('open');
+  backdrop.classList.remove('open');
+  menuBtn.classList.remove('open');
+  menuBtn.querySelector('i').className = 'fas fa-bars';
+  document.body.style.overflow = '';
+}
+menuBtn.addEventListener('click', () => {
+  drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+});
+backdrop.addEventListener('click', closeDrawer);
+closeBtn.addEventListener('click', closeDrawer);
+// close drawer when a link is clicked
+document.querySelectorAll('.drawer-nav .nl').forEach(link => {
+  link.addEventListener('click', closeDrawer);
+});
+// close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+});
+  /* Skill bar animation — driven by GSAP ScrollTrigger in scrolltrigger-init.js */
+  /* Fallback: animate active panel bars after short delay */
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelector('#tab-automation').querySelectorAll('.sk-fill[data-pct]').forEach(bar => {
+        bar.style.width = bar.dataset.pct + '%';
+      });
+    }, 900);
+  });
+
+  /* Tab switching */
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('act'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('act'));
+      btn.classList.add('act');
+      const panel = document.getElementById('tab-' + btn.dataset.tab);
+      if (panel) {
+        panel.classList.add('act');
+        panel.querySelectorAll('.sk-fill[data-pct]').forEach(bar => {
+          bar.style.width = bar.dataset.pct + '%';
+        });
+      }
+    });
+  });
+
+
+
+    // ── Auto-set active nav link based on current page ──
+    (function () {
+      const page = location.pathname.split("/").pop() || "index.html";
+      document.querySelectorAll(".nl").forEach(link => {
+        link.classList.remove("act");
+        const href = link.getAttribute("href");
+        if (href === page || (page === "" && href === "index.html")) {
+          link.classList.add("act");
+        }
+      });
+    })();
+</script>
+
+<!-- ══ FIX 5: Load order — Three.js BEFORE threejs-bg.js, GSAP last ══ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="assets/js/threejs-bg.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/js/scrolltrigger-init.js"></script>
+
+</body>
+</html>
