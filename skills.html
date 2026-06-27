@@ -19,8 +19,6 @@
 </head>
 <body>
 
-  <!-- ══ FIX 3: THE CANVAS — this was missing entirely ══ -->
-  <canvas data-three="skills" class="three-bg"></canvas>
 
 <button id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
 <nav id="nav">
@@ -189,7 +187,7 @@
   </div>
 </footer>
 
-<!-- ══ FIX 4: Page scripts BEFORE Three.js & GSAP ══ -->
+
 <script>
 const scrollTop = document.getElementById('scrollTop');
 window.addEventListener('scroll', () => {
@@ -271,9 +269,7 @@ document.addEventListener('keydown', (e) => {
     })();
 </script>
 
-<!-- ══ FIX 5: Load order — Three.js BEFORE threejs-bg.js, GSAP last ══ -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="assets/js/threejs-bg.js"></script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
