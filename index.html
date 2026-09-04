@@ -38,21 +38,6 @@
     .ld-text { font-size: 0.78rem; color: var(--text3); letter-spacing: 2px; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
 
 
-
-        /* ===== VOICE GREETING ===== */
-    #voice-toast { position: fixed; bottom: 80px; right: 28px; background: var(--card); border: 1px solid var(--border-h); border-radius: var(--r); padding: 14px 20px; display: flex; align-items: center; gap: 12px; z-index: 901; opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; backdrop-filter: blur(16px); max-width: 280px; }
-    #voice-toast.show { opacity: 1; transform: none; }
-    .vt-wave { display: flex; align-items: flex-end; gap: 3px; height: 24px; }
-    .vt-bar { width: 4px; border-radius: 4px; background: var(--grad); animation: wave 1.2s ease-in-out infinite; }
-    .vt-bar:nth-child(1) { height: 8px; animation-delay: 0s; }
-    .vt-bar:nth-child(2) { height: 18px; animation-delay: 0.15s; }
-    .vt-bar:nth-child(3) { height: 12px; animation-delay: 0.3s; }
-    .vt-bar:nth-child(4) { height: 22px; animation-delay: 0.1s; }
-    .vt-bar:nth-child(5) { height: 10px; animation-delay: 0.25s; }
-    @keyframes wave { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.4); } }
-    .vt-text { font-size: 0.82rem; color: var(--text2); font-family: 'JetBrains Mono', monospace; }
-    .vt-text strong { color: var(--accent); display: block; font-size: 0.88rem; }
-
     /* ===== HERO ===== */
     #home {
       min-height: 100vh; display: flex; align-items: center;
@@ -166,19 +151,6 @@
 </div>
 
 <button id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
-
-
-<!-- ===== VOICE TOAST ===== -->
-<div id="voice-toast">
-  <div class="vt-wave">
-    <div class="vt-bar"></div><div class="vt-bar"></div><div class="vt-bar"></div>
-    <div class="vt-bar"></div><div class="vt-bar"></div>
-  </div>
-  <div class="vt-text">
-    <strong>Welcome!</strong>Mujeeb's Portfolio
-  </div>
-</div>
-
 
 
 <!-- NAV -->
@@ -358,38 +330,10 @@
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('loader').classList.add('gone');
-
-    // Show toast visually always
-    document.getElementById('voice-toast').classList.add('show');
-
-    // Try speech (may be blocked by browser autoplay policy)
-    if ('speechSynthesis' in window) {
-      const u = new SpeechSynthesisUtterance("Welcome to Mujeeb's Portfolio.");
-      u.rate = 0.9; u.pitch = 1; u.volume = 1;
-      window.speechSynthesis.speak(u);
-      u.onend = () => setTimeout(() => document.getElementById('voice-toast').classList.remove('show'), 800);
-      // Fallback: hide toast after 4s even if speech is blocked
-      setTimeout(() => document.getElementById('voice-toast').classList.remove('show'), 4000);
-    }
   }, 1600);
 });
 
 
-// ===== VOICE GREETING =====
-function greet() {
-  if ('speechSynthesis' in window) {
-    const u = new SpeechSynthesisUtterance("Welcome to Mujeeb's Portfolio.");
-    u.rate = 0.9;
-    u.pitch = 1;
-    u.volume = 1;
-    const toast = document.getElementById('voice-toast');
-    toast.classList.add('show');
-    window.speechSynthesis.speak(u);
-    u.onend = () => {
-      setTimeout(() => toast.classList.remove('show'), 800);
-    };
-  }
-}
 
 // Scroll top
 const scrollTop = document.getElementById('scrollTop');
